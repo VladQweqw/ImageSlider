@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    box-sizing: border-box; 
+}
+html {scroll-behavior: smooth;}
+body {
+    background-color: rgb(59, 38, 38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+}
+
+.imgContainer {
+    max-width: 1000px;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+    
+}
+img {
+    width: 100%;
+    user-select: none;
+    transition: 300ms ease-in-out;
+    border-radius:12px;
+}
+@mixin CtrlBtn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+    user-select: none;
+    width: auto;
+}
+.animBtn {
+    animation: 1s fade;
+}
+.controlBtn {
+    @include CtrlBtn;
+}
+.prev {
+    left: 2%;
+}
+.next {
+    left: 98%;
+}
+.indicator {
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    border-radius: 50px;
+    user-select: none;
+    
+}
+.indicators {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    align-items: center;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@keyframes fade {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
